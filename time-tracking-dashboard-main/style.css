@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    /* Colors */
+    --pale_blue-color: hsl(236, 100%, 87%);
+    --desaturated_blue-color: hsl(235, 45%, 61%);
+    --blue-color: hsl(246, 80%, 60%);
+    --dark_blue-color: hsl(235, 46%, 20%);
+    --very_dark_blue-color: hsl(226, 43%, 10%);
+    --play-color: hsl(195, 74%, 62%);
+    --study-color: hsl(348, 100%, 68%);
+    --work-color: hsl(15, 100%, 70%);
+    --exercise-color: hsl(145, 58%, 55%);
+    --social-color: hsl(264, 64%, 52%);
+    --selfcare-color: hsl(43, 84%, 65%);
+    /* Font weights */
+    --light-weight: 300;
+    --normal-weight: 400;
+    --bold-weight: 500;
+    /* Font sizes */
+    --card_title-size: 18px
+}
+
+body {
+    margin: 0;
+    background-color: var(--very_dark_blue-color);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    cursor: default;
+}
+
+.dashboard {
+    padding: 1rem 0.5rem;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.dashboard__person {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100px;
+    min-width: 300px;
+    max-width: 330px;
+    background-color: var(--dark_blue-color);
+    border-radius: 1rem;
+}
+
+.dashboard__person p {
+    font-size: 12px;
+    color: var(--pale_blue-color)
+}
+
+.dashboard__avatar img {
+    border-radius: 50%;
+    border: 3px solid white;
+    height: 70px;
+    width: 70px;
+}
+
+.dashboard__info {
+    height: 11rem;
+    margin: 0;
+    background-color: var(--blue-color);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard__personName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard__personName_subtitle {
+    font-weight: var(--light-weight);
+}
+
+.dashboard__personName_title {
+    font-weight: var(--normal-weight);
+}
+
+.dashboard__activityPeriod {
+    padding: 1rem;
+    font-size: 15px;
+    color: var(--pale_blue-color);
+    display: flex;
+    justify-content: space-between;
+    font-weight: var(--light-weight);
+}
+
+.dashboard__activityPeriod-time:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.dashboard__activityPeriod-active {
+    color: white;
+}
+
+.infocard {
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 330px;
+    font-weight: var(--light-weight);
+    border-radius: 1rem;
+    min-height: 150px;
+    position: relative;
+}
+
+.infocard--work {
+    background-color: var(--work-color);
+}
+
+.infocard--play {
+    background-color: var(--play-color)
+}
+
+.infocard--study {
+    background-color: var(--study-color);
+}
+
+.infocard--exercise {
+    background-color: var(--exercise-color);
+}
+
+.infocard--social {
+    background-color: var(--social-color);
+}
+
+.infocard--self-care {
+    background-color: var(--selfcare-color);
+}
+
+.infocard img:nth-last-child(even) {
+    position: absolute;
+    right: 0.7rem;
+    top: -0.4rem;
+}
+
+.infocard__statistics {
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--dark_blue-color);
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+}
+
+.infocard__statistics:hover {
+    background-color: var(--desaturated_blue-color);
+}
+
+.infocard__header,
+.infocard__activity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infocard__header {
+    display: flex;
+    font-weight: var(--light-weight);
+    font-size: 17px;
+    margin-bottom: 0.5rem;
+}
+
+.infocard__header img {
+    height: 0.3rem;
+}
+
+.infocard__activity {
+    color: var(--pale_blue-color);
+    font-size: 15px;
+}
+
+.infocard__activity h3 {
+    font-size: 28px;
+    color: white;
+    font-weight: var(--light-weight);
+}
+
+@media (min-width: 830px) {
+    .dashboard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .dashboard__person {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .dashboard__avatar img {
+        height: 120px;
+        width: 120px;
+    }
+    .dashboard__activityPeriod {
+        display: grid;
+        font-size: 20px;
+    }
+    .dashboard__info {
+        height: 22rem;
+    }
+    .dashboard__person p {
+        font-size: 18px;
+    }
+    .dashboard__personName_title {
+        font-size: 32px;
+    }
+    .dashboard__info {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .infocard {
+        min-height: 260px;
+        width: 100px;
+        height: 100px;
+        padding: 0;
+        margin: 0;
+        display: grid;
+    }
+    .infocard__header {
+        font-size: 25px;
+    }
+    .infocard__header img {
+        height: 0.4rem;
+    }
+    .infocard__activity {
+        display: grid;
+        font-size: 20px;
+        
+    }
+    .infocard__activity h3 {
+        font-size: 45px;
+    }
+    
+}
